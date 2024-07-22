@@ -1,0 +1,983 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+  font-weight: auto;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #a1a3a4;
+  background-image: linear-gradient(to right, #6b7172, #83898a, #949b9c, #919494ec, #a0a7a8, #818585, #727677);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* styles.css */
+
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling header */
+header {
+  background-color: transparent;
+  color: #fff !important;
+  padding: 1% !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  transition: background-color 0.3s, backdrop-filter 0.3s;
+  width: 100%;
+
+}
+
+.header.glass {
+  background-color: rgba(66, 67, 70, 0.2);
+  backdrop-filter: blur(10px);
+  color: black;
+}
+
+header h1 {
+  margin: 0;
+  color: #5c5e5e !important;
+  font-size: 5%;
+}
+
+nav ul {
+  list-style: none;
+  margin: 1;
+  padding: 1;
+  display: flex;
+  /* Use flexbox */
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #090404;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #626565 !important;
+}
+
+
+/* Hero section */
+.hero {
+  background-color: rgba(0, 0, 0, 0.103);
+  padding: 20% 0%;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items:left;
+  overflow: hidden;
+}
+
+.hero-content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  height: auto;
+  z-index: 1;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-text .fade-line {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.hero-text .fade-line.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-image {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  width: 100%;
+}
+
+.hero-image.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-image img {
+  max-width: 100%;
+}
+
+.hero-content h1 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 8%;
+  position: relative;
+  color: #f9f9f9;
+  z-index: 1;
+  text-align: right;
+  font-weight: 300;
+  font-size: 300%;
+
+}
+
+.hero-content .small {
+  font-family: "Montserrat", sans-serif;
+  font-size: 300%;
+  position: relative;
+  color: #f9f9f9;
+  z-index: 1;
+  text-align: left;
+  font-weight: 600;
+}
+
+.hero-content .big {
+  font-size: 150%;
+  font-weight: 800;
+}
+
+.hero-content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 130%;
+  color: #ffffff;
+  font-weight: 500;
+  z-index: 2;
+  text-shadow: 2px 2px 5px rgba(88, 88, 90, 0.5);
+  text-align:left;
+  font-weight: 200;
+
+}
+
+.hero-content .glow-hero-text {
+  margin-bottom: 2%;
+  position: relative;
+  background: linear-gradient(to right, rgb(75, 76, 77), rgb(122, 125, 125));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  text-align: left;
+}
+
+.bg-image {
+  position: absolute;
+  max-width: 100%;
+  pointer-events: none;
+  transition: transform 3s ease, filter 0.3s ease-in-out;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+.glow-image {
+  display: inline-block;
+  filter: drop-shadow(0 0 10px rgb(150, 152, 152));
+  transition: filter 0.3s ease-in-out;
+
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image {
+    width: 50%;
+  }
+}
+
+
+.bg-image:nth-child(3) {
+  top: 0%;
+  left: 35%;
+}
+
+.bg-image:nth-child(2) {
+  top: -50%;
+  left: 80%;
+}
+
+
+
+
+/* about */
+
+.about-me {
+
+  padding: 10% 5%;
+  background-color: rgba(0, 0, 0, 0.103);
+  text-align: center;
+  color: #ffffff;
+  height: 100hv;
+  width: 100hv;
+
+}
+
+.about-me-content {
+  max-width: 150%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 150;
+  overflow: hidden;
+
+}
+
+.about-me h1 {
+  font-size: 200%;
+  font-family: "Bungee Outline", sans-serif;
+  font-weight: 500;
+}
+
+.about-me-text {
+  flex: 1;
+  text-align: center;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 120%;
+
+}
+
+.about-me-text p {
+  font-family: "Montserrat", sans-serif;
+  font-size:80%;
+  line-height: 150%;
+  background: linear-gradient(#545656d3, #5b5c5cef) padding-box,
+    linear-gradient(145deg, transparent 35%, #6d6f6f, #646467) border-box;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  padding: 5%;
+  width: 150%;
+  margin: 0% 5% ;
+}
+
+.about-me-image {
+  flex: 2;
+  text-align: right;
+  overflow: hidden;
+}
+
+
+/* Initial state for fade animations */
+.fade-left,
+.fade-right {
+  opacity: 0;
+  transition: opacity 5s, transform 3s;
+}
+
+/* Fade-in effect for left-to-right */
+.fade-left {
+  transform: translateX(-50px);
+}
+
+.fade-right {
+  transform: translateX(200px);
+}
+
+/* When element is in view */
+.fade-in .fade-left,
+.fade-in .fade-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.about-me-image img {
+  max-width: 100%;
+}
+
+/* Custom CSS for responsive typography */
+@media (max-width: 600px) {
+  .about-me-text p {
+    font-size: 0.9em; /* Adjust as needed */
+  }
+
+  .about-me-text h2 {
+    font-size: 1.2em; /* Adjust as needed */
+  }
+
+
+}
+
+/*topics*/
+
+/* Keyframes for fade-in-up animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Start position below */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* End position */
+  }
+}
+
+/* Initial state for fade-in-up */
+.fade-up {
+  opacity: 1;
+  transform: translateY(35px);
+  /* Start slightly below */
+  transition: opacity 2s, transform 1s;
+  /* Define the duration of the transition */
+}
+
+/* When element is in view */
+.fade-in .fade-up {
+  opacity: 1;
+  transform: translateY(2);
+  animation: fade-in-up 1s ease forwards;
+  /* Apply animation */
+}
+
+.resume{
+  padding-top: 4%;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: rgba(0, 0, 0, 0.247);
+  background-size: 400%;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 90%;
+  border: transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button:hover::before {
+  transform: scaleY(1);
+
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(52, 55, 57) 10.8%,
+    rgb(45, 46, 46) 94.3%
+  );
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  outline: none; /* Ensure no outline on button */
+}
+
+.button:focus {
+  outline: none; /* Remove focus outline */
+}
+.button:active {
+  scale: 0.9;
+
+}
+
+
+
+/* project */
+
+.projects {
+  padding: 10% 2% 2%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.103);
+
+
+}
+
+.projects .section-title {
+  margin-bottom: 5%;
+  font-size: 270%;
+  font-family: "Bungee Outline", sans-serif;
+  font-weight: 600;
+
+
+
+}
+
+
+.project-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4%;
+
+
+}
+
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  background-color: transparent;
+  max-width: 100%;
+  border-radius: 15px;
+  padding: 3%;
+
+}
+
+.project-content {
+  flex: 1;
+  margin: 3%;
+  width: calc(50% - 15px);
+  padding:1%;
+  background: linear-gradient(#a1a5a5e7, #818585) padding-box,
+    linear-gradient(145deg, transparent 35%, #7a7d7d, #88888a) border-box;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+}
+
+.project-content .title{
+  text-align: left;
+  padding: 2% 5% 0%;
+  font-size: 150%;
+
+}
+
+.project .hover-image-container {
+  position: relative;
+  width: 100%;
+  height: 5%;
+  overflow: hidden;
+}
+
+
+.project .image {
+  width: 50%;
+  height: 2%;
+  display: block;
+  transition: filter 0.5s ease;
+  border-radius: 10px;
+}
+
+
+.project .overlay {
+  position: absolute;
+  font-optical-sizing: auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 3%;
+  background: linear-gradient(to bottom, rgb(12, 44, 51), transparent), url();
+  color: rgb(147, 142, 142);
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  border-radius: 10px;
+}
+
+.project .overlay h2{
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+}
+
+.project .hover-image-container:hover .image {
+  filter: blur(10px);
+  opacity: 0.3;
+}
+
+.project .hover-image-container:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.project .text {
+  position: absolute;
+  padding: 10% 2%;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  font-size: 1em;
+  
+  /* Adjust the font size as needed */
+}
+
+.project .tools img {
+  height: 20%;
+  width: 20%;
+
+}
+
+.project .tools {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 3% 2%;
+
+}
+
+
+
+/* contact */
+
+
+.contact-details li {
+  padding: 2%;
+  font-size: 6vw;
+}
+
+.contact {
+  padding: 10% 2% 5% 2%;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.103);
+}
+
+.contact h1 {
+
+  font-size: 270%;
+  font-family: "Bungee Outline", sans-serif;
+  font-weight: 600;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30%;
+}
+
+
+.contact-details {
+
+  padding: 2%;
+  border-radius: 10px;
+  width: 100%;
+
+}
+
+.contact .list-unstyled {
+  width: 90%;
+  height: 100%;
+
+}
+
+
+.contact-details h2 {
+  font-size: 1.8em;
+  margin-bottom: 3%;
+  color: #c7c7c7;
+}
+
+.contact .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4% 0% 8% 0%;
+  height: 50%;
+  vertical-align: center;
+  align-items: center;
+
+}
+
+
+.contact .container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  /* Adjust the gap between icons */
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.contact .container ul li {
+  width: 15%;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  text-decoration: none;
+  text-decoration: none;
+  border-radius: 41px;
+  background: #0b262779;
+  box-shadow: 10px -10px 20px #0b3136b2,
+    -10px 10px 20px #0e2a2c;
+  margin: 15px;
+
+}
+
+.container ul li:hover {
+  background: #082325;
+  box-shadow: inset -10px 10px 20px #072025,
+    inset 10px -10px 20px #072025;
+  transition: background 1s;
+
+}
+
+.container ul li i {
+  color: #fff;
+  font-size: 35px;
+  padding-top: 55px;
+}
+
+.container ul li a {
+  color: inherit;
+  /* Set the color to inherit from the parent */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.container ul li a:hover {
+  color: inherit;
+  /* Set the color to inherit from the parent */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .contact-details li {
+    font-size: 7vw;
+    /* Adjust font-size for smaller screens */
+  }
+
+  .contact .container ul {
+    gap: 10px;
+    /* Adjust gap between icons for smaller screens */
+  }
+}
+
+/* skills*/
+
+.skills {
+  color: #ffffff;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.103);
+
+}
+
+.skills {
+  color: #ffffff;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.skills h1 {
+  margin: 3% 0% 5%;
+  font-size: 250%;
+  padding: 3%;
+  font-weight: 600;
+  font-family: "Bungee Outline", sans-serif;
+}
+
+.skill-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skill-container {
+  margin: 0 2%;
+  position: relative;
+}
+
+.skill {
+  background-color: #08131138;
+  border-radius: 25%;
+  padding: 2%;
+  width: 10%;
+  height: 10%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  margin: 2%;
+}
+
+.skill.shine::before {
+  content: '';
+  width: 1000px;
+  height: 100px;
+  margin-left: -200px;
+  transform: rotate(30deg);
+  background: linear-gradient(to top, transparent, rgba(200, 200, 200, 0.1), transparent);
+  position: absolute;
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+
+  0%,
+  100% {
+    margin-top: -100px;
+  }
+
+  50% {
+    margin-top: 800px;
+  }
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  background-color: #5e5e5e33;
+}
+
+.skill img {
+  width: 90%;
+  height: 90%;
+  margin-bottom: 10%;
+}
+
+.skill-list {
+  display: none;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 2%;
+}
+
+.skill-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-container:hover .skill-list {
+  display: block;
+}
+
+
+/*topic line */
+/**
+.line {
+  width: 30px;
+  height: 3px;
+  background: #03f5f5;
+  position: relative;
+  top: 62%;
+  border-radius: 50px;
+}
+
+
+#line_l {
+  -webkit-animation: line_l_animation 3s infinite;
+  animation: line_l_animation 3s infinite;
+}
+
+@keyframes line_l_animation {
+  0% {
+    left: calc(2% + 50%);
+    width: 0px;
+  }
+
+  35% {
+    left: calc(2% + 30%);
+    width: 100px;
+  }
+
+  70% {
+    left: calc(2% + 35%);
+    width: 0px;
+  }
+
+  100% {
+    left: calc(2% + 30%);
+    width: 0px;
+  }
+}
+**/
+/**footer */
+footer {
+  background-color: #0000005d;
+  /* Change the background color as needed */
+  color: #fff;
+  /* Change the text color as needed */
+  padding: 20px 0;
+  /* Adjust padding as needed */
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  .hero-content,
+  .about-me-content {
+    flex-direction: column;
+  }
+
+  .hero-text,
+  .hero-image,
+  .about-me-text,
+  .about-me-image {
+    max-width: 100%;
+  }
+}
+
+.project-section {
+  display: flex;
+  justify-content: space-between;
+  /* Ensures two columns on larger screens */
+  margin-bottom: 30px;
+}
+
+.project-content {
+  width: calc(50% - 15px);
+  /* Adjusted width for two columns */
+  margin-bottom: 15px;
+  /* Optional: Adjust vertical spacing */
+}
+
+@media (max-width: 768px) {
+  .project-section {
+    flex-direction: column;
+    /* Stacks projects vertically on smaller screens */
+  }
+
+  .project-content {
+    width: 100%;
+    /* Full width for projects on mobile */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: 100%;
+    /* Stacks projects vertically on smaller screens */
+  }
+
+  .hero-text {
+    width: 100%;
+    font-size: 70%;
+    /* Full width for projects on mobile */
+   
+  }
+  
+  .bg-image:nth-child(3) {
+    top: 0%;
+    left: 0%;
+  }
+  
+  .bg-image:nth-child(2) {
+    top: 50%;
+    left: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; /* Decrease font size for mobile devices */
+  }
+}
+
+/* If you need to adjust specific text elements */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em; /* Adjust heading sizes */
+  }
+  
+  h2 {
+    font-size: 1.4em;
+  }
+  
+  p {
+    font-size: 0.9em;
+  }
+
+  /* Adjust other elements as needed */
+  .project .overlay,
+  .project .text {
+    font-size: 0.9em;
+  }
+
+  .skill img {
+    width: 100%;
+  }
+
+  .hero-content .glow-hero-text {
+    
+      -webkit-text-fill-color: rgb(62, 255, 229); /* This makes the text color white on mobile */
+      background: none; /* Remove background gradient */
+
+      }
+}
